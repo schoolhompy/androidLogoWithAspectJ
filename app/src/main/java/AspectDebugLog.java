@@ -66,10 +66,8 @@ public final class AspectDebugLog {
 
         LogPrinter.logBefore(currentClassName, currentMethodName, lastClassMethod);
 
-
         Log.d(GADGET_ASPECT_2,  utils.repeat(prespace, utils.getdepthCounts(tid) + 1) + "▼" + "(" + joinPoint.getSignature().getDeclaringType() + ")");
         Log.d(GADGET_ASPECT_2,  utils.repeat(prespace, utils.getdepthCounts(tid) + 1) + "┏ " + currentMethodName);
-
 
         dummyDepthText.add(currentClassName);
     }
@@ -160,13 +158,10 @@ public final class AspectDebugLog {
 
         private static void logBefore(String className, String methodName, String lastClassMethod ) {
             Log.d(GADGET_ASPECT_UML,   lastClassMethod + " -> " + className + " : " + methodName);
-
-
         }
 
         private static void logAroundBefore(String className) {
             Log.d(GADGET_ASPECT_UML, ACTIVATE + className);
-
         }
 
         private static void logAroundAfter(String className, String methodName, List<String> depthText, long estimate) {
@@ -177,7 +172,6 @@ public final class AspectDebugLog {
 
             Log.d(GADGET_ASPECT_UML, className + " --> " + returnClassName + " : " + methodName + "  ( " + estimate + "ms )"); //### weaveDebugTraceBefore:
             Log.d(GADGET_ASPECT_UML, DEACTIVATE + className );
-
         }
     }
 
